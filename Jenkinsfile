@@ -47,7 +47,7 @@ pipeline {
         failure {
             // Notify or perform additional actions on build failure
             // Example: slackSend(channel: '#my-channel', message: 'Build failed!')
-            sh 'echo "Build failed!"'
+            sh 'echo "Build failed !!!"'
         }
     }
 }
