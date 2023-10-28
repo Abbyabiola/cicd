@@ -34,7 +34,7 @@ pipeline {
             steps {
                 // You can add deployment steps here, e.g., deploy to a server
                 // Example: sh 'rsync -avz target/my-app.war user@server:/path/to/deployment/'
-                sh 'echo "Deploying...."'            }
+                sh 'echo "Deploying....."'            }
         }
     }
 
