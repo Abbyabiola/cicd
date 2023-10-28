@@ -42,7 +42,7 @@ pipeline {
         success {
             // Notify or perform additional actions on successful build
             // Example: SlackSend(channel: '#my-channel', message: 'Build successful!')
-            sh 'echo "Build successful!"'
+            sh 'echo "Build successful !!"'
         }
         failure {
             // Notify or perform additional actions on build failure
