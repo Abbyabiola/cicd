@@ -8,20 +8,21 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('Build') {
-            steps {
-                // Use the Maven wrapper (recommended) or the system Maven
-                sh 'mvn clean install'
-            }
+ stage('2-cleanws'){
+      steps{
+        sh 'mvn clean'
+      }
+    }
+    stage('3-mavenbuild'){
+      steps{
+        sh 'mvn package'
+      }
+    }
+    stage('unittest'){
+        steps{
+            sh 'mvn test'
         }
-
-        stage('Test') {
-            steps {
-                // Run unit tests
-                sh 'mvn test'
-            }
-        }
+    }
 
         stage('Package') {
             steps {
@@ -34,7 +35,7 @@ pipeline {
             steps {
                 // You can add deployment steps here, e.g., deploy to a server
                 // Example: sh 'rsync -avz target/my-app.war user@server:/path/to/deployment/'
-                sh 'echo "Deploying....."'            }
+                sh 'echo "Deploying......."'            }
         }
     }
 
