@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout your source code from your version control system (e.g., Git)
+                // ([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/EtechTeam7/cicd.git']]])
                 checkout scm
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 // You can add deployment steps here, e.g., deploy to a server
                 // Example: sh 'rsync -avz target/my-app.war user@server:/path/to/deployment/'
-                sh 'echo "Deploying..."'            }
+                sh 'echo "Deploying....."'            }
         }
     }
 
